@@ -1,0 +1,17 @@
+classes to make:
+cell- single unit of the play area
+  - player 
+  - color
+  - contents
+row array of cells
+  - array of cells
+screen- array of rows
+  - array of rows
+  - make life easier with a square screen
+  
+  
+  
+- lock our GIU dimensions
+
+
+
