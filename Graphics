@@ -1,1 +1,85 @@
-graphics
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
+
+/*
+ * Extends JPanel in order to draw with paintComponent
+ * keyword 'this' refers to the instance of this JPanel
+ */
+
+public class GraphicsTest extends JPanel implements ActionListener
+{
+	private JFrame frame;
+	
+	public GraphicsTest()
+	{
+		frame = new JFrame();
+		
+		//.getContentPane() works to do something, not entirely sure right now
+		Container can = frame.getContentPane();
+		can.add(this);
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setSize(500, 500);
+				
+		this.setBackground(Color.DARK_GRAY);
+		
+		this.setLayout(new BorderLayout());
+		
+		/*
+		* This is a way to add components to different parts of the JPanel 
+		* BorderLayout.<NORTH, SOUTH, EAST, WEST, CENTER>
+		*
+		* I'm not sure if its bet to add components to 'this' or to
+		* Container can
+		*/
+		
+		JPanel paneN = new JPanel();
+		paneN.setLayout(new FlowLayout());
+		paneN.setBackground(Color.BLUE);
+		
+		this.add(paneN, BorderLayout.NORTH);
+		
+		
+		Button b1 = new Button("Button 1");
+		b1.setPreferredSize(new Dimension (100, 100));
+		paneN.add(b1);
+		Button b2 = new Button("Button 2");
+		paneN.add(b2);
+		Button b3 = new Button("Button 3");
+		paneN.add(b3);
+		
+		Button b4 = new Button("Button 4");
+		this.add(b4, BorderLayout.WEST);
+	}
+	
+	public void paintComponent(Graphics g)
+	{
+		super.paintComponent(g);
+		
+		g.setColor(Color.GREEN);
+		g.drawRect(100, 150, 200, 200);
+		
+		g.setColor(Color.RED);
+		g.fillOval(200, 200, 400, 400);
+		g.setColor(Color.CYAN);
+		g.fillOval(250, 250, 300, 300);
+		
+		/*
+		 * Try resizing the frame.
+		 */
+		
+	}
+
+	public void actionPerformed(ActionEvent e)
+	{
+		
+	}
+	
+	public static void main(String args[])
+	{
+		new GraphicsTest();
+	}
+}
+
