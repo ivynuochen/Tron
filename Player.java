@@ -16,7 +16,7 @@ public class Player {
 		return this.c;
 	}
 	
-	public Color setColor(Color color)		//sets the color of the player after instantiation
+	public void setColor(Color color)		//sets the color of the player after instantiation
 	{
 		this.c = color; 
 	}
