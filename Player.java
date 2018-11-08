@@ -11,4 +11,14 @@ public class Player {
 		this.name = name;
 		this.c = c;
 	}
+	public Color getColor()		//returns the color of the player
+	{
+		return this.c;
+	}
+	
+	public Color setColor(Color color)		//sets the color of the player after instantiation
+	{
+		this.c = color; 
+	}
+	
 }
