@@ -1,0 +1,42 @@
+classes to make:
+cell- single unit of the play area
+  - player 
+  - Trail
+  - nothing
+  Methods:
+   Cell()
+     Player p = null;
+     Color c = null;
+   
+
+        
+       
+   
+   
+   
+  
+row array of cells
+  - array of cells
+  
+screen- array of rows
+  Methods:
+    getContent(int x, int y);
+   - Will return what is inside the given cell
+        instance of Player class, a trail, null
+  
+   void setPlayer(Player p, int x, int y);
+   
+   void setTrail(Color c, int x, int y);
+   - Adds given object to the cell
+   - Will throw error if you add an object to an already full cell
+   
+   void movePlayer(Player p, int dir);
+   -Get the cell in the correct cardinal direction
+      Check for ArrayOutOfBoundsException
+   -Call setContent(Player p, int x, int y);
+   
+  - array of rows
+  - make life easier with a square screen
+  
+  
+  

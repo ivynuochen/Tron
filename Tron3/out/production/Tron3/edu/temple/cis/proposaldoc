@@ -1,0 +1,17 @@
+//Implements ActionListener(): To take keyboard input
+//Import timer(): To determine how often the screen updates
+//Method refreshScreen(): Method is called to output the game results to the screen, the screen output will consist of ASCII characters, the screen is refreshed per predetermined time-interval. 
+//Class Player: To make certain number of players: instances
+//              Each instance of player will be assigned an ASCII character which will make up the ‘snake’
+//              Each instance of player will be assigned a String (you can name your snake!)
+//              Each instance of player will have pointsEarned
+//Class Screen: Use getPixel() to determine if a player can move to a given grid location. 
+
+
+//Potential features
+//1 Player mode
+//Implements a computer controlled player
+//Obstacles
+//Randomly locations on the grid already filled with a character at the beginning of a round
+//Varying speeds
+//Use an arg[] to determine how often the screen updates (how fast the players move)
