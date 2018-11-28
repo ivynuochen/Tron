@@ -3,7 +3,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.Random;
 
-import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
+//import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
 
 public class PlayTron extends JPanel implements ActionListener, KeyListener
 {
@@ -148,7 +148,14 @@ public class PlayTron extends JPanel implements ActionListener, KeyListener
 
 		int dir = p.getDirection();
 			if (dir == 1)//moving up
-				p.setY(locY - 1);
+			    if(playScreen.getColor(locX, locY-1) == player1.getColor())//  if player runs into themselves. ex. up down up
+			    {
+			    	popUp2(p);
+			    }
+			    else
+			    {
+			    	p.setY(locY - 1);
+			    }
 			else if (dir == 2)//moving right
 			{
 				nextX = locX +1;
@@ -163,7 +170,14 @@ public class PlayTron extends JPanel implements ActionListener, KeyListener
 
 			}
 			else if (dir == 3)//moving down
-				p.setY(locY + 1);
+				if(playScreen.getColor(locX, locY-1) == player1.getColor())//  if player runs into themselves. ex. up down up
+			    {
+			    	popUp2(p);
+			    }
+			    else
+			    {
+			    	p.setY(locY + 1);
+			    }
 			else if (dir == 4)//moving left
 				p.setX(locX - 1);
 			else
@@ -194,6 +208,24 @@ public class PlayTron extends JPanel implements ActionListener, KeyListener
 			System.exit(0);
 		}
 	}
+	private void popUp2(Player p)
+	{
+		Object[] options = {"Play Again", "Exit Game"};
+		int m = JOptionPane.showOptionDialog(frame,"Player "+p.getName()+" has run into themselves. "+"Would you like to play the game again?","You've lost the game!",
+				JOptionPane.YES_NO_CANCEL_OPTION,
+				JOptionPane.QUESTION_MESSAGE,null, options, options[1]);
+		System.out.println(m);
+		if (m == 0)
+		{
+			frame.dispose();
+			new PlayTron();		//is this okay?
+		}
+		if (m == 1)
+		{
+			frame.dispose();
+			System.exit(0);
+		}
+	}
 
 	//not currently used for anything. Maybe remove later
 	private void drawTrail(int x, int y, Color c)
@@ -204,7 +236,7 @@ public class PlayTron extends JPanel implements ActionListener, KeyListener
 		repaint();
 	}
 
-	//The purpose is to convert array indexes to grip locations in pixels
+	//The purpose is to convert array indexes to grid locations in pixels
 	private int getGridLocX(int cellLocX)
 	{
 		int locX = cellLocX * cellWidth;
@@ -219,7 +251,7 @@ public class PlayTron extends JPanel implements ActionListener, KeyListener
 	private static Color randomColor()
 	{
 		Random ran = new Random();
-		int ranCol = ran.nextInt(256);
+		//int ranCol = ran.nextInt(256);
 
 		Color retColor = new Color(ran.nextInt(256), ran.nextInt(256), ran.nextInt(256));
 
