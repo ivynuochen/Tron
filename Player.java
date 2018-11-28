@@ -1,6 +1,6 @@
 import java.awt.*;
 public class Player {
-	
+
 	private String name;
 	private Color c;
 	private int score;
@@ -9,19 +9,25 @@ public class Player {
 	private int dir = 0;
 
 	//Constructor
-	public Player (int x, int y, Color c)
+	public Player (String name, int x, int y, Color c)
 	{
+		this.name = name;
 		this.c = c;
-		
+
 		this.x = x;
 		this.y = y;
-		
+
 		this.prevX = x;
 		this.prevY = y;
-		
+
 	}
-	
+
 	//Getters
+	public String getName()
+	{
+		return this.name;
+	}
+
 	public Color getColor()
 	{
 		return this.c;
@@ -48,7 +54,7 @@ public class Player {
 	{
 		return this.dir;
 	}
-	
+
 	//Setters
 	public void setX(int x)
 	{
@@ -58,7 +64,7 @@ public class Player {
 	{
 		this.prevX = px;
 	}
-	
+
 	public void setY(int y)
 	{
 		this.y = y;
@@ -67,7 +73,7 @@ public class Player {
 	{
 		this.prevY = py;
 	}
-	
+
 	public void setDirection(int d) //Can only take values 1-4, add check later
 	{
 		this.dir = d;
