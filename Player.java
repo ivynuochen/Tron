@@ -1,3 +1,5 @@
+package edu.temple.cis;
+
 import java.awt.*;
 public class Player {
 

@@ -1,3 +1,5 @@
+package edu.temple.cis;
+
 public class Row {
 	
 	protected Cell[] myRow;
