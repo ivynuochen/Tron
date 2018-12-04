@@ -1,9 +1,9 @@
+
 import java.awt.*;
 public class Player {
 
 	private String name;
 	private Color c;
-	private int score;
 	private int x, y;
 	private int prevX, prevY;
 	private int dir = 0;

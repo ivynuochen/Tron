@@ -1,10 +1,11 @@
+
 import java.awt.*;
 
 public class Cell 
 {
 	protected Player p = null;
 	//this is default background color. Should probably fine better way to set this in the future
-	protected Color c = Color.DARK_GRAY;
+	protected Color c = Color.LIGHT_GRAY;
 	
 	public Cell()
 	{

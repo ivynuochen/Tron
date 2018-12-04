@@ -1,3 +1,4 @@
+
 public class Row {
 	
 	protected Cell[] myRow;
@@ -13,7 +14,6 @@ public class Row {
 		//Construct cell for set amount
 		for(int i = 0; i < length; i++)
 		{	
-			System.out.println("Cell[" + i + "]");
 			myRow[i] = new Cell();
 		}
 	}

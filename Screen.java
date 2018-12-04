@@ -1,4 +1,3 @@
-
 import java.awt.*;
 
 public class Screen {
@@ -20,7 +19,6 @@ public class Screen {
 		//The play area is a square, so rowLength should be the same as "colHeight"
 		for(int i = 0; i < rowLength; i++)
 		{
-			//System.out.println("Row[" + i + "]");
 			myScreen[i] = new Row(rowLength);
 		}
 	}
